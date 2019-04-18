@@ -55,17 +55,6 @@ function PuzzleBox:OnThink()
                 end
             end
         end
-
---        local units = Entities:FindAllByClassname("npc_dota_creature")
---        for _, unit in pairs(units) do
---            if string.match(unit:GetName(), "magnet_") then
---                if string.match(unit:GetName(), "negative") then
---                    unit:FindAbilityByName("negative_polarity"):ToggleAbility()
---                elseif string.match(unit:GetName(), "positive") then
---                    unit:FindAbilityByName("positive_polarity"):ToggleAbility()
---                end
---            end
---        end
     end
     return 1
 end
@@ -111,14 +100,6 @@ function PuzzleBox:BuildingsToUnits()
         if string.match(unit:GetName(), "wall_") then
             new_unit = CreateUnitByName("wall", unit:GetOrigin(), true, nil, nil, 0)
             new_unit:AddNewModifier(nil, nil, "mod__wall", nil)
-        elseif string.match(unit:GetName(), "magnet_") then
-            new_unit = CreateUnitByName("magnet", unit:GetOrigin(), true, nil, nil, 0)
-            local mod = new_unit:AddNewModifier(new_unit, self, "mod__polarity", nil)
-            if string.match(unit:GetName(), "negative") then
-                mod.polarity = -1
-            elseif string.match(unit:GetName(), "positive") then
-                mod.polarity = 1
-            end
         end
 
         local colour_tint = unit:GetRenderColor()
@@ -173,8 +154,6 @@ function PuzzleBox:SetupHero(hero)
             hero:SetRenderColor(0, 0, 255)
             hero.respawn_unit.index = ParticleManager:CreateParticle("particles/econ/wards/smeevil/smeevil_ward/smeevil_ward_blue_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero.respawn_unit)
         end
-    elseif string.match(GetMapName(), "polarity") then
-        hero.respawn_unit.index = ParticleManager:CreateParticle("particles/econ/wards/smeevil/smeevil_ward/smeevil_ward_pink_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero.respawn_unit)
     end
 
     hero.respawn_unit:AddNewModifier(nil, nil, "modifier_phased", nil)
@@ -186,10 +165,6 @@ function PuzzleBox:SetupHero(hero)
             ability:SetLevel(1)
         end
     end
-    --    local drop_orb_ability = hero:FindAbilityByName("drop_orb")
-    --    drop_orb_ability:SetLevel(1)
-    --    local tp_to_orb_ability = hero:FindAbilityByName("tp_to_orb")
-    --    tp_to_orb_ability:SetLevel(1)
 end
 
 function PuzzleBox:InitialItems(hero)

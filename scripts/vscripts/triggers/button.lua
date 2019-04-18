@@ -1,4 +1,4 @@
-LinkLuaModifier("mod__wall_invis", "button/mod__wall_invis", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("mod__wall_invis", "modifiers/mod__wall_invis", LUA_MODIFIER_MOTION_NONE)
 
 
 local trigger_active = true

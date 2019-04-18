@@ -12,6 +12,4 @@ COLOUR_MAPPING = {
 HERO = "npc_dota_hero_wisp"
 if string.match(GetMapName(), "timelapse") then
     HERO = "npc_dota_hero_rubick"
-elseif string.match(GetMapName(), "polarity") then
-    HERO = "npc_dota_hero_magnataur"
 end

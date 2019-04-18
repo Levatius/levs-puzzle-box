@@ -1,5 +1,3 @@
---No longer required
---LinkLuaModifier("mod__no_clip", "modifiers/mod__no_clip", LUA_MODIFIER_MOTION_NONE)
 mod__wall_invis = class({})
 
 
