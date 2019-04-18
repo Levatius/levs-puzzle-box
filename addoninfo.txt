@@ -1,0 +1,16 @@
+"AddonInfo"
+{
+    "PenaltiesEnabled"		    "0"
+    "timelapse_1"
+    {
+        "MaxPlayers"		    "2"
+    }
+    "timelapse_2"
+    {
+        "MaxPlayers"		    "2"
+    }
+    "timelapse_3"
+    {
+        "MaxPlayers"		    "2"
+    }
+}

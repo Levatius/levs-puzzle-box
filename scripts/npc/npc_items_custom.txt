@@ -1,0 +1,83 @@
+"DOTAAbilities"
+{
+    "item_teleorb_red"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_teleorb_red"
+        "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                 "models/heroes/oracle/crystal_ball.vmdl"
+        "Effect"                "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+        "ItemQuality"           "epic"
+        "UIPickupSound"			"Item.PickUpGemShop"
+        "UIDropSound"			"Item.DropGemShop"
+        "WorldDropSound"        "Item.DropGemWorld"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+
+    "item_teleorb_blue"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_teleorb_blue"
+        "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                 "models/heroes/oracle/crystal_ball.vmdl"
+        "Effect"                "particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_1.vpcf"
+        "ItemQuality"           "epic"
+        "UIPickupSound"			"Item.PickUpGemShop"
+        "UIDropSound"			"Item.DropGemShop"
+        "WorldDropSound"        "Item.DropGemWorld"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+
+    "item_weighted_orb"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_weighted_orb"
+        "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                 "models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
+        "Effect"                "particles/items_fx/aegis_lvl_1000_ambient_gold_shine.vpcf"
+        "ItemQuality"           "epic"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+
+    "item_nightlock_mango"
+    {
+        "BaseClass"             "item_lua"
+        "ScriptFile"			"abilities/item_nightlock_mango"
+        "AbilityTextureName"    "item_nightlock_mango"
+        "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "ItemQuality"           "rare"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+}
