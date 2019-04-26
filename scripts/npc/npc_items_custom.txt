@@ -52,6 +52,7 @@
         "Model"                 "models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
         "Effect"                "particles/items_fx/aegis_lvl_1000_ambient_gold_shine.vpcf"
         "ItemQuality"           "epic"
+        "WorldDropSound"        "Hero_ShadowShaman.SheepHex.Target"
 
         "ItemCost"              "0"
         "ItemKillable"          "0"
@@ -70,6 +71,46 @@
         "AbilityTextureName"    "item_nightlock_mango"
         "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "ItemQuality"           "rare"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+
+    "item_banner_red"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_banner_red"
+        "AbilityBehavior"	     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                 "models/heroes/juggernaut/jugg_healing_ward.vmdl"
+        "Effect"                "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_1.vpcf"
+        "ItemQuality"           "rare"
+        "WorldDropSound"        "DOTA_Item.ObserverWard.Activate"
+
+        "ItemCost"              "0"
+        "ItemKillable"          "0"
+        "ItemSellable"          "0"
+        "ItemPurchasable"       "0"
+        "ItemDroppable"         "0"
+        "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+        "ItemStackable"         "0"
+        "ItemPermanent"         "1"
+    }
+
+    "item_banner_blue"
+    {
+        "BaseClass"             "item_datadriven"
+        "AbilityTextureName"    "item_banner_blue"
+        "AbilityBehavior"	     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                 "models/heroes/juggernaut/jugg_healing_ward.vmdl"
+        "Effect"                "particles/econ/courier/courier_greevil_blue/courier_greevil_blue_ambient_1.vpcf"
+        "ItemQuality"           "rare"
+        "WorldDropSound"        "DOTA_Item.ObserverWard.Activate"
 
         "ItemCost"              "0"
         "ItemKillable"          "0"

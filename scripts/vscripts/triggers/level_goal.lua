@@ -33,6 +33,7 @@ function OnStartTouch()
                     hero:SetOrigin(spawn:GetOrigin())
                     hero:AddNewModifier(nil, nil, "modifier_phased", { duration = 0.1 })
                     hero.respawn_point = spawn:GetOrigin()
+                    EmitSoundOn("Hero_Wisp.TeleportIn.Arc", hero)
 
                     local index = ParticleManager:CreateParticle("particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
                     ParticleManager:SetParticleControl(index, 0, hero:GetOrigin())

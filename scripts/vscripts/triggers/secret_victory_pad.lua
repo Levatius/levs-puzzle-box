@@ -7,7 +7,7 @@ function OnStartTouch(trigger)
                 GameRules:SetCustomVictoryMessage("NO")
                 GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
             else
-                GameRules:SetCustomVictoryMessage("LEV-COMPLEX SOLVED")
+                GameRules:SetCustomVictoryMessage("SECRET SOLUTION FOUND")
                 GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
             end
         end

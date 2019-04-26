@@ -1,5 +1,6 @@
 LinkLuaModifier("mod__orb_countdown", "modifiers/mod__orb_countdown", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("mod__weighted_orb", "modifiers/mod__weighted_orb", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("mod__banner_vision", "modifiers/mod__banner_vision", LUA_MODIFIER_MOTION_NONE)
 drop_orb = class({})
 
 
@@ -27,6 +28,19 @@ function drop_orb:OnSpellStart()
                 item:GetContainer():SetForwardVector(RandomVector(1))
                 item.unit = CreateUnitByName("npc_dota_hero_wisp", item:GetOrigin(), false, item, item, DOTA_TEAM_GOODGUYS)
                 item.unit:AddNewModifier(nil, nil, "mod__weighted_orb", nil)
+                break
+            elseif item:GetName():sub(1, 11) == "item_banner" then
+                local owner = item.owner
+                caster:DropItemAtPositionImmediate(item, caster:GetOrigin())
+                owner.banner = item
+                owner:AddNewModifier(caster, self, "mod__banner_vision", nil)
+                if owner.player_type == 0 then
+                    item:GetContainer():SetRenderColor(255, 150, 150)
+                else
+                    item:GetContainer():SetRenderColor(150, 150, 255)
+                end
+                item:GetContainer():SetOrigin(item:GetContainer():GetOrigin() + Vector(0, 0, 8))
+                item:GetContainer():SetAngles(0, 0, 0)
                 break
             end
         end

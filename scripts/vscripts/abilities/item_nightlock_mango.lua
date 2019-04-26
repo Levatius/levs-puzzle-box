@@ -9,6 +9,7 @@ function item_nightlock_mango:OnSpellStart()
         local mod = caster:FindModifierByName("mod__orb_countdown")
         if mod then
             mod:CountdownComplete()
+            caster:AddNewModifier(caster, self, "mod__just_teleported", { duration = 1.0 })
         end
         caster:AddNewModifier(caster, self, "mod__delayed_damage", nil)
     end

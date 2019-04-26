@@ -13,4 +13,8 @@
     {
         "MaxPlayers"		    "2"
     }
+    "timelapse_4"
+    {
+        "MaxPlayers"		    "2"
+    }
 }

@@ -10,6 +10,7 @@ function tp_to_orb:OnSpellStart()
         if mod then
             mod:CountdownComplete()
             caster:AddNewModifier(caster, self, "mod__just_teleported", { duration = 1.0 })
+            EmitSoundOn("Hero_Wisp.TeleportOut.Arc", caster)
         end
     end
 end

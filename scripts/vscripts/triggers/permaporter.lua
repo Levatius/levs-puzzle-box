@@ -22,6 +22,7 @@ function OnStartTouch(trigger)
             hero.respawn_unit:SetOrigin(hero.respawn_point)
             hero.has_triggered_init = true
             thisEntity.triggered = true
+            EmitSoundOn("Hero_Wisp.TeleportIn.Arc", hero)
         end
     end
 end

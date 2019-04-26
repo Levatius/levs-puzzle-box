@@ -1,6 +1,5 @@
 require("config")
 LinkLuaModifier("mod__wall", "modifiers/mod__wall", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("mod__polarity", "modifiers/mod__polarity", LUA_MODIFIER_MOTION_NONE)
 
 
 if PuzzleBox == nil then
@@ -10,6 +9,9 @@ end
 function Precache(ctx)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts", ctx)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts", ctx)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", ctx)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", ctx)
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", ctx)
     PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", ctx)
     PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", ctx)
     PrecacheResource("soundfile", "soundevents/game_sounds_ui_imported.vsndevts", ctx)
@@ -175,8 +177,14 @@ function PuzzleBox:InitialItems(hero)
 
     if self.player_type_counter == 0 then
         hero:AddItemByName("item_teleorb_red")
+        if GetMapName() == "timelapse_4" then
+            hero:AddItemByName("item_banner_red")
+        end
     else
         hero:AddItemByName("item_teleorb_blue")
+        if GetMapName() == "timelapse_4" then
+            hero:AddItemByName("item_banner_blue")
+        end
     end
     hero:SwapItems(0, 1)
 
@@ -207,8 +215,12 @@ end
 function PuzzleBox:OnNPCSpawned(event)
     print("OnNPCSpawned")
     local npc = EntIndexToHScript(event.entindex)
-    if npc and npc.respawn_point then
-        npc:SetOrigin(npc.respawn_point)
+    if npc then
+        if npc.banner then
+            npc:SetOrigin(npc.banner:GetOrigin())
+        elseif npc.respawn_point then
+            npc:SetOrigin(npc.respawn_point)
+        end
     end
 end
 
@@ -222,6 +234,12 @@ function PuzzleBox:OnItemPickedUp(event)
         end
     elseif item:GetName() == "item_weighted_orb" then
         item.unit:RemoveSelf()
+    elseif item:GetName():sub(1, 11) == "item_banner" then
+        local owner = item.owner
+        owner.banner = nil
+        if owner and owner:HasModifier("mod__banner_vision") then
+            owner:RemoveModifierByName("mod__banner_vision")
+        end
     end
 end
 

@@ -14,6 +14,7 @@ function OnStartTouch(trigger)
             local index = ParticleManager:CreateParticle("particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
             ParticleManager:SetParticleControl(index, 0, hero:GetOrigin())
             ParticleManager:ReleaseParticleIndex(index)
+            EmitSoundOn("Hero_Wisp.TeleportIn.Arc", hero)
         end
     end
 end

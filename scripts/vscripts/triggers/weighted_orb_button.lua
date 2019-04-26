@@ -23,6 +23,7 @@ function OnStartTouch(trigger)
         end
 
         hero:AddItemByName("item_weighted_orb")
+        EmitSoundOn("Hero_Chen.PenitenceImpact", hero)
 
         local index = ParticleManager:CreateParticle("particles/econ/items/luna/luna_lucent_ti5_gold/luna_eclipse_cast_moonfall_gold.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
         ParticleManager:SetParticleControl(index, 0, hero:GetOrigin())

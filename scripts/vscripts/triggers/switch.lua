@@ -8,3 +8,9 @@ function OnStartTouch(trigger)
         EmitSoundOn("Building_Generic.Destruction", thisEntity)
     end
 end
+
+function OnStartTouch_Explosion(trigger)
+    if IsServer() then
+        EmitSoundOn("Hero_Techies.RemoteMine.Detonate", thisEntity)
+    end
+end
